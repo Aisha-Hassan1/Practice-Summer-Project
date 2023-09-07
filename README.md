@@ -20,7 +20,7 @@ The simulation involves generating a map with randomly positioned stores and veh
 1. Clone this repository to your local machine.
 2. Open the project directory in your preferred code editor.
 3. Run it.
-![alt text](https://github.com/Aisha-Hassan1/practice-Summer-Project/blob/mariam_1/simulation/img/simulationScreen.png)
+   
 ## Usage
 
 1. Open the `index.html` file in your web browser.
@@ -31,3 +31,10 @@ The simulation involves generating a map with randomly positioned stores and veh
 6. Hover over stores or vehicles to view their information.
 7. Orders will be assigned to vehicles, and their capacity will be updated accordingly.
 8. After delivery, remaining orders will be displayed.
+
+## Register page 
+![alt text](https://github.com/Aisha-Hassan1/practice-Summer-Project/blob/mariam_1/simulation/img/simulationScreen.png)
+
+## Map page
+![alt text](https://github.com/Aisha-Hassan1/practice-Summer-Project/blob/mariam_1/simulation/img/MapScreen.png)
+![alt text](https://github.com/Aisha-Hassan1/practice-Summer-Project/blob/mariam_1/simulation/img/MapScreen2.png)
