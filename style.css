@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+form {
+    margin-top: 10%;
+}
+
+
+label {
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+}
+
+h1 {
+    color: rgb(240, 200, 6);
+
+}
+
+.range_stores,
+.range_Vehicles {
+    position: relative;
+    height: 6%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFF;
+    border-radius: 10%;
+    border: 1px solid rgb(119, 255, 0);
+}
+
+.img {
+    width: 150;
+}
+
+.plus,
+.minus {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.Number_of_Vehicles,
+.Number_of_stores {
+    text-align: center;
+    font-size: xx-large;
+    text-decoration-line: none;
+    border: none;
+    border-color: transparent;
+}
+
+.range_stores .minus,
+.range_Vehicles .minus {
+    color: rgb(119, 255, 0);
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.range_stores .plus,
+.range_Vehicles .plus {
+    color: rgb(240, 200, 6);
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.info {
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(240, 200, 6);
+    ;
+}
+
+.newVec {
+    border-color: #ccff90;
+}
+
+.start {
+    font-size: 30px;
+    font-weight: 400;
+    color: rgb(235, 232, 232);
+    background-color: rgb(224, 188, 8);
+    border-color: rgb(235, 232, 232);
+}
+
+.validatecapacity {
+    color: red;
+}
+
+.validate,
+.valid-country,
+.valid-city,
+.valid-cap {
+    color: red;
+}
+
+#map {
+    height: 1500px;
+}
+
+.imagee {
+    width: 30%;
+    display: inline;
+}

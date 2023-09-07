@@ -1,0 +1,96 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulation</title>
+  <link href="/materialize-v1.0.0/materialize/css/materialize.min.css" type="text/css" rel="stylesheet"
+    media="screen,projection" />
+  <link rel="stylesheet" href="/style.css">
+
+
+</head>
+
+<body>
+
+  <form class="container" method="post">
+    <div class="row">
+      <img class="col s6 m6 l3" src="/flower.jpg" />
+    </div>
+    <div class="row">
+      <h1 class="col s6 m6 l6">Register</h1>
+    </div>
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <label class="countries_name">Country</label>
+      </div>
+      <div class="col s6 m6 l6">
+        <label class="Cities_name">City</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <div class="countries_selection">
+          <select class="browser-default" id="country">
+            <option selected value="no">Choose Your Country</option>
+          </select>
+        </div>
+      </div>
+      <div class="col s6 m6 l6">
+        <div class="Cities_selection">
+          <select class="browser-default" id="state">
+            <option selected value="no">Choose Your City</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <label class="valid-country" style="display: none">You Must Choose Country</label>
+      </div>
+      <div class="col s6 m6 l6">
+        <label class="valid-city" style="display: none">You Must Choose City</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6 m6 l4">
+        <label for="Number_of_stores" class="container_stores">Number of Stores</label>
+      </div>
+      <div class="col s6 m6 l2">
+        <div class="range_stores">
+          <input type="button" value="-" class="minus" onclick="decrementValue('numberid' ,false)">
+          <input type="text" id="numberid" class="Number_of_stores" value="0">
+          <input type="button" value="+" class="plus" onclick="incrementValue('numberid',false)">
+        </div>
+      </div>
+      <div class="col s6 m6 l4">
+        <label for="Number_of_Vehicles" class="container_Vehicles">Number of Vehicles</label>
+      </div>
+      <div class="col s6 m6 l2 ">
+        <div class="range_Vehicles">
+          <input type="button" value="-" class="minus" onclick="decrementValue('numberidvec',true)">
+          <input type="text" id="numberidvec" class="Number_of_Vehicles" value="0">
+          <input type="button" value="+" class="plus" onclick="incrementValue('numberidvec',true)">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="child-vehicle" class="vec">
+      </div>
+    </div>
+
+    <div class="row">
+      <button class="start" class="col s3 m3 l3" id="start_simulation" type="button" onclick="startSimulation()">Start
+        Simulation</button>
+    </div>
+  </form>
+  <script src="/listOfCountry.js"></script>
+  <script src="/script.js"></script>
+</body>
+
+</html>
