@@ -342,7 +342,7 @@ for(let i=0;i<NumberOfStores;i++)
     arrData.push(obj);
 }
 let arrDataCopy=arrData;
-console.log(arrDataCopy[2]);
+//console.log(arrDataCopy[2]);
 sessionStorage.arrDataBefore=JSON.stringify(arrData);
 StoreToVehicles(arrDataCopy);
 }
@@ -350,7 +350,6 @@ StoreToVehicles(arrDataCopy);
 //console.log(arrData[2],"pppppppppppppp");
 //console.log(arrData);
 }
-
 function getRandomValueBetween(min,max)
 {
     let ran=Math.random()*max;
@@ -360,14 +359,12 @@ function StoreToVehicles(arrDataCopy)
 {
     //let SessionArray=JSON.parse(sessionStorage.SessionArray);
     let arrData=arrDataCopy;
-    console.log(arrData[3]);
+    //console.log(arrData[3]);
     for(let store=NumberOfVehicles;store<(NumberOfStores+NumberOfVehicles);store++)
     {
-        console.log(arrData[3].Name,":::::::",store);
         let storeObj=arrData[store];
         //sessionStorage["StoreBefore"+store]=JSON.stringify(storeObj);
         //console.log(storeObj);
-
         for(let vehicle=0;vehicle<NumberOfVehicles;vehicle++)
         {
             let vehicleObj=arrData[vehicle];
