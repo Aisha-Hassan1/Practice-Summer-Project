@@ -280,31 +280,6 @@ function get()
 }
 function StoresVehiclesData()
 {
-for(let i=0;i<NumberOfStores;i++)
-{
-    let hasIcy=Math.random();
-    let randomValue=Math.random()*100;
-    let randomValueBetween;
-    if(hasIcy>0.5)
-    {
-    randomValueBetween=getRandomValueBetween(0,randomValue);
-    }
-    else{
-        randomValueBetween=0;
-    }
-    let obj={
-        Name:`Store ${i+1}`,
-        Type:"Store",
-        vehicles:[],
-        "Total Orders":Math.floor(randomValue),
-
-        "Not Icy Orders":Math.floor(randomValue)-Math.floor(randomValueBetween),
-
-        "Icy Orders":Math.floor(randomValueBetween),
-    }
-    arrData.push(obj);
-}
-
 for(let i=0;i<NumberOfVehicles;i++)
 {
     let obj={
@@ -341,26 +316,59 @@ for(let i=0;i<NumberOfVehicles;i++)
         obj["Free Not Icy Orders"]=Cars[i].Capacity-Total_Curr;
 
     }
+    //console.log(obj);
     arrData.push(obj);
 }
-sessionStorage.arrDataBefore=JSON.stringify(arrData);
-StoreToVehicles();
+let http = new XMLHttpRequest();
+http.open('get', 'stores.json', true);
+http.send();
+http.onload = function(){
+
+if(this.readyState == 4 && this.status == 200){
+let DB_stores = JSON.parse(this.responseText);
+for(let i=0;i<NumberOfStores;i++)
+{
+    let store=DB_stores[i];
+
+    let obj={
+
+        Name:`Store ${i+1}`,
+        Type:"Store",
+        vehicles:[],
+        "Total Orders":store.total_orders,
+        "Not Icy Orders":store.total_orders-store.icy_orders,
+        "Icy Orders":store.icy_orders,
+    }
+    arrData.push(obj);
 }
+let arrDataCopy=arrData;
+console.log(arrDataCopy[2]);
+sessionStorage.arrDataBefore=JSON.stringify(arrData);
+StoreToVehicles(arrDataCopy);
+}
+}
+//console.log(arrData[2],"pppppppppppppp");
+//console.log(arrData);
+}
+
 function getRandomValueBetween(min,max)
 {
     let ran=Math.random()*max;
     return Math.floor(ran);
 }
-function StoreToVehicles()
+function StoreToVehicles(arrDataCopy)
 {
     //let SessionArray=JSON.parse(sessionStorage.SessionArray);
-    for(let store=0;store<NumberOfStores;store++)
+    let arrData=arrDataCopy;
+    console.log(arrData[3]);
+    for(let store=NumberOfVehicles;store<(NumberOfStores+NumberOfVehicles);store++)
     {
+        console.log(arrData[3].Name,":::::::",store);
         let storeObj=arrData[store];
         //sessionStorage["StoreBefore"+store]=JSON.stringify(storeObj);
         //console.log(storeObj);
 
-        for(let vehicle=NumberOfStores;vehicle<(NumberOfStores+NumberOfVehicles);vehicle++)
+        for(let vehicle=0;vehicle<NumberOfVehicles;vehicle++)
         {
             let vehicleObj=arrData[vehicle];
             //console.log(vehicleObj);
